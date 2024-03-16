@@ -1,10 +1,23 @@
-import React from 'react'
-import { RxHamburgerMenu } from "react-icons/rx";
+import React, { Fragment, useState } from "react";
+import { FaBarsStaggered } from "react-icons/fa6";
+import NavLinks from "./NavLinks";
 
 const Sidebar = () => {
+  const [show, setShow] = useState(false);
+  console.log(show);
   return (
-    <RxHamburgerMenu />
-  )
-}
+    <Fragment>
+      {" "}
+      <FaBarsStaggered
+        className="fs-1"
+        style={{ cursor: "pointer" }}
+        onClick={() => setShow(!show)}
+      />
+      <ul tabIndex={0} className={show ? "" : "d-none"}>
+        <NavLinks />
+      </ul>
+    </Fragment>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
