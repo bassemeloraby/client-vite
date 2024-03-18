@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { mainUrl } from "../utils/Data";
 import axios from "axios";
@@ -10,7 +10,6 @@ import { DrugsList, Loading, ScientificName, SearchInput } from "../components";
 const url = mainUrl + "allDrugs";
 
 const Drugs = () => {
-
   const [allDrugs, setAllDrugs] = useState([]);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([]);
@@ -52,27 +51,40 @@ const Drugs = () => {
     return <Loading />;
   }
 
-
   return (
     <div>
-    <div className="d-flex mb-2">
-      <h2>All Drugs</h2>
+      <div className="d-flex mb-2">
+        <h2>All Drugs</h2>
+      </div>
+      <div>
+        <SearchInput
+          setQuery={setQuery}
+          placeholder="enter Trade name or Scientific name"
+        />
+        <DrugsList items={items} setScientific={setScientific} />
+      </div>
+      <Routes>
+        <Route
+          path="allDugsSearch"
+          element={
+            <div className="container">
+              {" "}
+              <SearchInput
+                setQuery={setQuery}
+                placeholder="enter Trade name or Scientific name"
+              />
+            </div>
+          }
+        />
+        <Route
+          path="scientificName"
+          element={
+            <ScientificName allDrugs={allDrugs} scientific={scientific} />
+          }
+        />
+      </Routes>
     </div>
-    <Routes>
-      <Route
-        path="allDugsSearch"
-        element={
-          <div className="container">
-            {" "}
-            <SearchInput setQuery={setQuery} placeholder="enter Trade name or Scientific name"/>
-            <DrugsList items={items} setScientific={setScientific}/>
-          </div>
-        }
-      />
-      <Route path="scientificName" element={<ScientificName allDrugs={allDrugs} scientific={scientific}  />} />
-    </Routes>
-  </div>
-  )
-}
+  );
+};
 
-export default Drugs
+export default Drugs;
