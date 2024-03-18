@@ -8,6 +8,7 @@ import {
   Drugs,
   Error,
   HomeLayout,
+  Indication,
   Insurance,
   Landing,
 } from "./pages";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Landing />} />
           <Route path="/drugs/*" element={<Drugs />} />
+          <Route path="/indication/:ScientificName" element={<Indication />} />
           <Route path="/cosmtics" element={<Cosmotics />} />
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/courses" element={<Courses />} />

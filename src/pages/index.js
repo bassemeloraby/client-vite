@@ -6,6 +6,7 @@ import Insurance from "./Insurance";
 import Courses from "./Courses";
 import Calc from "./Calc";
 import Error from "./Error";
+import Indication from './Indication'
 export {
   HomeLayout,
   Landing,
@@ -15,4 +16,5 @@ export {
   Courses,
   Calc,
   Error,
+  Indication
 };
