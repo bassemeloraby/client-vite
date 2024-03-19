@@ -2,35 +2,38 @@ import React, { Fragment, useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import GoogleLink from "../components/GoogleLink";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { mainUrl } from "../utils/Data";
 import { Loading } from "../components";
+import { useSelector } from "react-redux";
 
 
 const url = mainUrl + "allDrugs";
 
 const ScientificName = () => {
   const { ScientificName } = useParams();
-  const [allDrugs, setAllDrugs] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const { drugs, loading } = useSelector((state) => state.drugs);
+
+  // const [allDrugs, setAllDrugs] = useState([]);
+  // const [loading, setLoading] = useState(false);
 
 
 
-  useEffect(() => {
-    const fetchAllDrugs = async () => {
-      setLoading(true);
-      try {
-        const res = await axios.get(`${url}`);
-        setLoading(false);
-        setAllDrugs(res.data);
-        // console.log(res.data);
-      } catch (error) {
-        setLoading(false);
-        console.log(error);
-      }
-    };
-    fetchAllDrugs();
-  }, []);
+  // useEffect(() => {
+  //   const fetchAllDrugs = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const res = await axios.get(`${url}`);
+  //       setLoading(false);
+  //       setAllDrugs(res.data);
+  //       // console.log(res.data);
+  //     } catch (error) {
+  //       setLoading(false);
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchAllDrugs();
+  // }, []);
 
   if (loading) {
     return <Loading />;
@@ -52,7 +55,7 @@ const ScientificName = () => {
           </tr>
         </thead>
         <tbody>
-          {allDrugs
+          {drugs
             .filter((drug) => drug.ScientificName === ScientificName)
             .map((drug, index) => (
               <tr key={index}>
