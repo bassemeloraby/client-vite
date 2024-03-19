@@ -6,6 +6,7 @@ import Tot from "./Tot";
 import Loading from "./Loading";
 import DrugsList from "./DrugsList";
 import SearchInput from "./SearchInput";
+import Footer from "./Footer";
 
 export {
   Header,
@@ -15,5 +16,6 @@ export {
   Tot,
   Loading,
   DrugsList,
-  SearchInput
+  SearchInput,
+  Footer
 };

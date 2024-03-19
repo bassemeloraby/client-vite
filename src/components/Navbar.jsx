@@ -11,7 +11,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center ">
         <Link to="/">
-          <h2>brand</h2>
+          <h2>Mederma</h2>
         </Link>
       </div>
       <div className="navbar-right d-none d-sm-block">
