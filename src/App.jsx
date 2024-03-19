@@ -11,6 +11,7 @@ import {
   Indication,
   Insurance,
   Landing,
+  ScientificName,
 } from "./pages";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Landing />} />
           <Route path="/drugs/*" element={<Drugs />} />
+          <Route path="/drugs/:ScientificName" element={<ScientificName />} />
           <Route path="/indication/:ScientificName" element={<Indication />} />
           <Route path="/cosmtics" element={<Cosmotics />} />
           <Route path="/insurance" element={<Insurance />} />

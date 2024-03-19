@@ -8,7 +8,8 @@ const DrugsList = ({ items, setScientific }) => {
 
   const handelS = (s) => {
     setScientific(s);
-    navigate(`/allD/scientificName`);
+    navigate(`/drugs/${s}`);
+    console.log(s)
   };
   const handleIndication = (i) => {
     navigate(`/indication/${i}`);

@@ -20,7 +20,7 @@ function Indication() {
         const res = await axios.get(`${url}`);
         setLoading(false);
         setIndications(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       } catch (error) {
         setLoading(false);
         console.log(error);

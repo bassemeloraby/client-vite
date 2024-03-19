@@ -5,7 +5,6 @@ import NavLinks from "./NavLinks";
 import Tot from "./Tot";
 import Loading from "./Loading";
 import DrugsList from "./DrugsList";
-import ScientificName from "./ScientificName";
 import SearchInput from "./SearchInput";
 
 export {
@@ -16,6 +15,5 @@ export {
   Tot,
   Loading,
   DrugsList,
-  ScientificName,
   SearchInput
 };

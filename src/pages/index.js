@@ -7,6 +7,7 @@ import Courses from "./Courses";
 import Calc from "./Calc";
 import Error from "./Error";
 import Indication from './Indication'
+import ScientificName from './ScientificName'
 export {
   HomeLayout,
   Landing,
@@ -16,5 +17,6 @@ export {
   Courses,
   Calc,
   Error,
-  Indication
+  Indication,
+  ScientificName
 };

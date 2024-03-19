@@ -3,10 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import { mainUrl } from "../utils/Data";
 import axios from "axios";
 
-// import AllDrugsList from "../../components/medicine/AllDrugsList";
-// import ScientificName from "../../components/medicine/ScientificName";
-// import SearchInput from "../../components/SearchInput";
-import { DrugsList, Loading, ScientificName, SearchInput } from "../components";
+
+import { DrugsList, Loading, SearchInput } from "../components";
 const url = mainUrl + "allDrugs";
 
 const Drugs = () => {
@@ -23,7 +21,7 @@ const Drugs = () => {
         const res = await axios.get(`${url}`);
         setLoading(false);
         setAllDrugs(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       } catch (error) {
         setLoading(false);
         console.log(error);
@@ -76,12 +74,7 @@ const Drugs = () => {
             </div>
           }
         />
-        <Route
-          path="scientificName"
-          element={
-            <ScientificName allDrugs={allDrugs} scientific={scientific} />
-          }
-        />
+        
       </Routes>
     </div>
   );

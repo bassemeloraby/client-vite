@@ -20,7 +20,7 @@ const Courses = () => {
   return (
     <section className="container">
     {Excel.map((e, i) => (
-        <div>
+        <div key={i}>
         <h4>{e.text}</h4>
             
           <div className="ratio ratio-16x9 mt-3" style={{ width: "40rem" }}>
