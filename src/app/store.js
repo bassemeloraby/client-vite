@@ -5,4 +5,8 @@ export const store = configureStore({
   reducer: {
     drugs: drugsReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
