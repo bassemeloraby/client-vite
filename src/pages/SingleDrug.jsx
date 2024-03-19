@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const SingleDrug = () => {
   const { id } = useParams();
-  const { drugs, loading } = useSelector((state) => state.drugs);
+  const { drugs } = useSelector((state) => state.drugs);
 
   return (
     <div>

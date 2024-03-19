@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 
 const ScientificName = () => {
   const { ScientificName } = useParams();
-  const { drugs, loading } = useSelector((state) => state.drugs);
+  const { drugs } = useSelector((state) => state.drugs);
 
   // const [allDrugs, setAllDrugs] = useState([]);
   // const [loading, setLoading] = useState(false);
@@ -35,9 +35,7 @@ const ScientificName = () => {
   //   fetchAllDrugs();
   // }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+ 
 
   return (
     <Fragment>

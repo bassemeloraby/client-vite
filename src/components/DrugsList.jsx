@@ -3,11 +3,10 @@ import { Virtuoso } from "react-virtuoso";
 import { useNavigate } from "react-router-dom";
 import GoogleLink from "./GoogleLink";
 
-const DrugsList = ({ items, setScientific }) => {
+const DrugsList = ({ items }) => {
   const navigate = useNavigate();
 
   const handelS = (s) => {
-    setScientific(s);
     navigate(`/drugs/${s}`);
     console.log(s)
   };
