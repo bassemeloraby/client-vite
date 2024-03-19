@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import Table from "react-bootstrap/Table";
 import GoogleLink from "../components/GoogleLink";
 import { useParams } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Loading } from "../components";
 import { useSelector } from "react-redux";
 
 
-const url = mainUrl + "allDrugs";
+// const url = mainUrl + "allDrugs";
 
 const ScientificName = () => {
   const { ScientificName } = useParams();

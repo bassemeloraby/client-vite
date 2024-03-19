@@ -8,6 +8,8 @@ import Calc from "./Calc";
 import Error from "./Error";
 import Indication from './Indication'
 import ScientificName from './ScientificName'
+import SingleDrug from './SingleDrug'
+
 export {
   HomeLayout,
   Landing,
@@ -18,5 +20,6 @@ export {
   Calc,
   Error,
   Indication,
-  ScientificName
+  ScientificName,
+  SingleDrug
 };

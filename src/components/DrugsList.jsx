@@ -15,6 +15,11 @@ const DrugsList = ({ items, setScientific }) => {
     navigate(`/indication/${i}`);
   };
 
+  const handleCard =(id) =>{
+    console.log(id)
+    navigate(`/singleDrug/${id}`);
+  }
+
   return (
     <div>
     <Virtuoso
@@ -57,6 +62,13 @@ const DrugsList = ({ items, setScientific }) => {
               onClick={() => handleIndication(drug.ScientificName)}
             >
               Indication
+            </span>{" "}
+            <span
+            className="me-2 ms-2"
+              style={{ cursor: "pointer", color: "black" }}
+              onClick={() => handleCard(drug._id)}
+            >
+              Card
             </span>{" "}
             <GoogleLink
               name={drug.TradeName + drug.Strength + drug.StrengthUnit}
