@@ -17,7 +17,7 @@ import {
 
 function App() {
   return (
-    <BrowserRouter>
+   
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Landing />} />
@@ -32,7 +32,7 @@ function App() {
         </Route>
         <Route path="/*" element={<Error />}/>
       </Routes>
-    </BrowserRouter>
+    
   );
 }
 

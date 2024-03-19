@@ -5,7 +5,7 @@ import NavLinks from "./NavLinks";
 
 const Navbar = () => {
   return (
-    <div className="d-flex justify-content-around">
+    <div className="d-flex justify-content-around shadow-lg">
       <div className="navbar-left d-sm-none">
         <Sidebar/>
       </div>
