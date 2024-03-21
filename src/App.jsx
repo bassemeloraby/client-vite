@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         // loader: ScientificNameLoader,
       },
       {
-        path: "singleDrug",
+        path: "singleDrug/:id",
         element: <SingleDrug />,
         // errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
