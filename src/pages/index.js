@@ -6,9 +6,10 @@ import Insurance from "./Insurance";
 import Courses from "./Courses";
 import Calc from "./Calc";
 import Error from "./Error";
-import Indication from './Indication'
-import ScientificName from './ScientificName'
-import SingleDrug from './SingleDrug'
+import Indication from "./Indication";
+import ScientificName from "./ScientificName";
+import SingleDrug from "./SingleDrug";
+import Login from "./Login";
 
 export {
   HomeLayout,
@@ -21,5 +22,6 @@ export {
   Error,
   Indication,
   ScientificName,
-  SingleDrug
+  SingleDrug,
+  Login,
 };
