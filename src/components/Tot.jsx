@@ -25,28 +25,27 @@ const Tot = () => {
   };
 
   return (
-     <div className="mt-2">
+    <div className="mt-2">
       <section className="1 col-3 me-2">
-        {" "}
-        <Table striped bordered hover variant="primary">
+        <table className="table table-striped">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Value</th>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Value</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <th scope="row">1</th>
               <td>Master</td>
-              <td>
-                {" "}
-                <input
-                  value={master}
-                  onChange={(e) => setMaster(e.target.value)}
-                />
-              </td>
+              <td><input
+              value={master}
+              onChange={(e) => setMaster(e.target.value)}
+            /></td>
             </tr>
             <tr>
+              <th scope="row">2</th>
               <td>Span</td>
               <td>
                 {" "}
@@ -54,82 +53,104 @@ const Tot = () => {
               </td>
             </tr>
             <tr>
+              <th scope="row">3</th>
               <td>Visa</td>
               <td>
                 <input value={visa} onChange={(e) => setVisa(e.target.value)} />
               </td>
             </tr>
             <tr>
+              <th scope="row">4</th>
               <td>Bank</td>
               <td className="text-center">
                 <h3 className="border bg-warning"> {bank}</h3>
               </td>
             </tr>
           </tbody>
-        </Table>
-      </section>
+        </table>{" "}
+       </section>
 
       <section
-        className="2 col-3 rounded border border-5 border-primary"
+        className="2  col-6 rounded border border-5 border-primary text-center"
         id="capDiv"
       >
         {" "}
-        <Table striped bordered hover variant="success">
+        
+        <Table striped  hover >
           <thead>
             <tr>
               <th>Kind</th>
-              
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>
-                Cash :<td>{tot - (parseInt(bank) + parseInt(insurance))}</td>
+                Cash :
               </td>
+              <td>{tot - (parseInt(bank) + parseInt(insurance))}</td>
             </tr>
             <tr>
               <td>
-                Span : <span className="border">{bank}</span>
+                Span : 
               </td>
-            
+              <td>
+              <span className="border">{bank}</span>
+              </td>
+              
             </tr>
             <tr>
               <td>
                 Insurance{" "}
-                <input
-                  value={insurance}
-                  onChange={(e) => setInsurance(e.target.value)}
-                />
+                
               </td>
-              
+              <td>
+              <input
+              value={insurance}
+              onChange={(e) => setInsurance(e.target.value)}
+              className="text-center"
+            />
+                
+              </td>
+
             </tr>
             <tr>
               <td>
                 Tot{" "}
-                <input value={tot} onChange={(e) => setTot(e.target.value)} />
+                
               </td>
-              
+              <td>
+                
+                <input value={tot} onChange={(e) => setTot(e.target.value)}  className="text-center"/>
+              </td>
             </tr>
             <tr>
               <td>
                 Vat{" "}
-                <input value={vat} onChange={(e) => setVat(e.target.value)} />
+                
               </td>
-              
+              <td>
+                
+                <input value={vat} onChange={(e) => setVat(e.target.value)}  className="text-center" />
+              </td>
             </tr>
             <tr>
-              <td>Tot - Vat : <span>{tot - vat} </span></td>
-              
+              <td>
+                Tot - Vat : 
+              </td>
+              <td>
+                <span>{tot - vat} </span>
+              </td>
             </tr>
           </tbody>
-          <button onClick={clear} className="bg-danger">
+          
+        </Table>
+        <button onClick={clear} className="bg-danger">
             clear
           </button>
           <button onClick={captureScreenShot}>screenshot</button>
-        </Table>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Tot
+export default Tot;
