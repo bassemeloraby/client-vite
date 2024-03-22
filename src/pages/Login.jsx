@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { login, reset } from "../features/auth/authReducer";
 // import Spinner from "../components/Spinner";
@@ -102,6 +102,13 @@ const Login = () => {
             </div>
           </form>
         </div>
+        <Link to="/"
+        type='button'
+        className='btn btn-secondary btn-block'
+        
+      >
+        guest user
+      </Link>
       </div>
       {wrongMessage && (
         <h3 className="text-danger">wrong email or password ... try again </h3>
