@@ -1,14 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import drugsService from "./drugsService";
 
-const { getDrugs, getOneDrug } = drugsService;
+const {  getOneDrug } = drugsService;
 
-export const getD = createAsyncThunk("drugs/getDrugs", getDrugs);
-// export const getOneD = createAsyncThunk("drugs/getDrugs/:id", getOneDrug);
 
-// Delete company
+// get One Drug
 export const getOneD = createAsyncThunk(
-  "drugs/getDrugs/:id",
+  "drugs/getOneDrug/:id",
   async (id, thunkAPI) => {
     try {
       return await getOneDrug(id);
@@ -25,32 +23,22 @@ export const getOneD = createAsyncThunk(
 );
 
 const initialState = {
-  drugs: [],
+  oneDrug: [],
   loading: false,
 };
 
-const drugsSlice = createSlice({
-  name: "drugs",
+const oneDrugSlice = createSlice({
+  name: "oneDrug",
   initialState: initialState,
 
   extraReducers: (builder) => {
     builder
-      .addCase(getD.pending, (state, action) => {
-        state.loading = true;
-      })
-      .addCase(getD.fulfilled, (state, action) => {
-        state.loading = false;
-        state.drugs = action.payload;
-      })
-      .addCase(getD.rejected, (state, action) => {
-        state.loading = false;
-      })
       .addCase(getOneD.pending, (state, action) => {
         state.loading = true;
       })
       .addCase(getOneD.fulfilled, (state, action) => {
         state.loading = false;
-        state.drugs = state.drugs.filter((drug) => drug.id === action.payload.id);
+        state.oneDrug = action.payload;
       })
       .addCase(getOneD.rejected, (state, action) => {
         state.loading = false;
@@ -58,4 +46,4 @@ const drugsSlice = createSlice({
   },
 });
 
-export default drugsSlice.reducer;
+export default oneDrugSlice.reducer;

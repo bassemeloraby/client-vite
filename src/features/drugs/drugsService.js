@@ -12,9 +12,16 @@ const getDrugs = async () => {
   };
 
 
+const getOneDrug = async (id) => {
+    const response = await axios.get(`${API_URL}/${id}`);
+  console.log(response)
+    return response.data;
+  };
+
+
   const drugsService = {
     getDrugs,
-    
+    getOneDrug,
   };
   
   export default drugsService;
