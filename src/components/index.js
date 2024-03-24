@@ -8,6 +8,7 @@ import DrugsList from "./DrugsList";
 import SearchInput from "./SearchInput";
 import Footer from "./Footer";
 import ErrorElement from "./ErrorElement";
+import SubmitBtn from "./SubmitBtn";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   SearchInput,
   Footer,
   ErrorElement,
+  SubmitBtn
 };
