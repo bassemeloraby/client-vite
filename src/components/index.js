@@ -7,6 +7,7 @@ import Loading from "./Loading";
 import DrugsList from "./DrugsList";
 import SearchInput from "./SearchInput";
 import Footer from "./Footer";
+import ErrorElement from "./ErrorElement";
 
 export {
   Header,
@@ -17,5 +18,6 @@ export {
   Loading,
   DrugsList,
   SearchInput,
-  Footer
+  Footer,
+  ErrorElement,
 };

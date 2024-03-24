@@ -16,6 +16,7 @@ import {
   ScientificName,
   SingleDrug,
 } from "./pages";
+import { ErrorElement } from "./components";
 
 const router = createBrowserRouter([
   {
@@ -26,54 +27,54 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Landing />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
       },
       {
         path: "drugs/*",
         element: <Drugs />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "drugs/:ScientificName",
         element: <ScientificName />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "indication/:ScientificName",
         element: <Indication />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "cosmtics",
         element: <Cosmotics />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "insurance",
         element: <Insurance />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "courses",
         element: <Courses />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "calc",
         element: <Calc />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
       {
         path: "singleDrug/:id",
         element: <SingleDrug />,
-        // errorElement: <ErrorElement />,
+        errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },
     ],
