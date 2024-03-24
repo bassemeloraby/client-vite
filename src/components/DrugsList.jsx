@@ -2,9 +2,12 @@ import React from "react";
 import { Virtuoso } from "react-virtuoso";
 import { useNavigate } from "react-router-dom";
 import GoogleLink from "./GoogleLink";
+import { useDispatch } from "react-redux";
+import { getOneD } from "../features/drugs/oneDrugReducer";
 
 const DrugsList = ({ items }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handelS = (s) => {
     navigate(`/drugs/${s}`);
@@ -16,6 +19,7 @@ const DrugsList = ({ items }) => {
 
   const handleCard =(id) =>{
     console.log(id)
+    dispatch(getOneD(id));
     navigate(`/singleDrug/${id}`);
   }
 

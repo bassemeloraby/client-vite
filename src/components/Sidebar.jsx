@@ -4,7 +4,6 @@ import NavLinks from "./NavLinks";
 
 const Sidebar = () => {
   const [show, setShow] = useState(false);
-  console.log(show);
   return (
     <Fragment>
       {" "}

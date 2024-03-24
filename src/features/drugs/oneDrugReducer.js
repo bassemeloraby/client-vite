@@ -8,6 +8,7 @@ const {  getOneDrug } = drugsService;
 export const getOneD = createAsyncThunk(
   "drugs/getOneDrug/:id",
   async (id, thunkAPI) => {
+    console.log(id)
     try {
       return await getOneDrug(id);
     } catch (error) {
