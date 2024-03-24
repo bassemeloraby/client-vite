@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import {
+  AddDrug,
   Calc,
   Cosmotics,
   Courses,
@@ -74,6 +75,12 @@ const router = createBrowserRouter([
       {
         path: "singleDrug/:id",
         element: <SingleDrug />,
+        errorElement: <ErrorElement />,
+        // loader: ScientificNameLoader,
+      },
+      {
+        path: "addDrug",
+        element: <AddDrug />,
         errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },

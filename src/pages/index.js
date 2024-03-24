@@ -10,6 +10,7 @@ import Indication from "./Indication";
 import ScientificName from "./ScientificName";
 import SingleDrug from "./SingleDrug";
 import Login from "./Login";
+import AddDrug from "./AddDrug";
 
 export {
   HomeLayout,
@@ -24,4 +25,5 @@ export {
   ScientificName,
   SingleDrug,
   Login,
+  AddDrug
 };
