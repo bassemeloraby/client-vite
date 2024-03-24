@@ -4,8 +4,14 @@ import authService from './authService'
 // Get user from localStorage
 const user = JSON.parse(localStorage.getItem('user'))
 
+// const getUserFromLocalStorage = () => {
+//   return JSON.parse(localStorage.getItem('user')) || null;
+// };
+
+
 const initialState = {
   user: user ? user : null,
+  // user: getUserFromLocalStorage(),
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -33,6 +39,8 @@ export const register = createAsyncThunk(
 // Login user
 export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
   try {
+    // localStorage.setItem('user', JSON.stringify(user));
+
     return await authService.login(user)
   } catch (error) {
     const message =
