@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { customFetch } from "../../utils/index";
 
-import { mainUrl } from "../../utils/Data";
+// import { mainUrl } from "../../utils/Data";
 const url = "allDrugs";
 
 
-const API_URL = mainUrl + "allDrugs";
+// const API_URL = mainUrl + "allDrugs";
 
 const getDrugs = async () => {
     // const response = await axios.get(API_URL);
