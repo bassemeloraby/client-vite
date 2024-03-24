@@ -1,10 +1,17 @@
 import React from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 import { Header, Loading, Navbar } from "../components";
+import { useSelector } from "react-redux";
+import IdleTimerContainer from "../components/IdleTimerContainer";
 
 const HomeLayout = () => {
   const navigation = useNavigation();
   const isPageLoading = navigation.state === "loading";
+  const { user } = useSelector((state) => state.auth);
+  window.onbeforeunload = function () {
+    localStorage.removeItem("user");
+  };
+
   return (
     <div>
       <Header />
@@ -13,6 +20,7 @@ const HomeLayout = () => {
         <Loading />
       ) : (
         <div className="container">
+        {user && <IdleTimerContainer></IdleTimerContainer>}
           <Outlet />
         </div>
       )}
