@@ -19,6 +19,11 @@ import {
 } from "./pages";
 import { ErrorElement } from "./components";
 
+// actions
+import { action as addDrugAction } from './pages/AddDrug';
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,6 +88,7 @@ const router = createBrowserRouter([
         element: <AddDrug />,
         errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
+        action: addDrugAction,
       },
     ],
   },
