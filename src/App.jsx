@@ -20,6 +20,7 @@ import {
 import { ErrorElement } from "./components";
 
 // actions
+// import { action as addDrugAction } from './pages/AddDrug';
 import { action as addDrugAction } from './pages/AddDrug';
 
 
