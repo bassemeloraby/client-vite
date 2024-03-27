@@ -1,17 +1,37 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import drugsService from "./drugsService";
 
-const { getDrugs, getOneDrug } = drugsService;
+const { getDrugs, deleteOneDrug, updateOneDrug } = drugsService;
 
 export const getD = createAsyncThunk("drugs/getDrugs", getDrugs);
 // export const getOneD = createAsyncThunk("drugs/getDrugs/:id", getOneDrug);
 
-// Delete company
-export const getOneD = createAsyncThunk(
-  "drugs/getDrugs/:id",
+// delete One Drug
+export const deleteOneD = createAsyncThunk(
+  "drugs/deleteOneDrug/:id",
   async (id, thunkAPI) => {
+    console.log(id);
     try {
-      return await getOneDrug(id);
+      return await deleteOneDrug(id);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+// update One Drug
+export const updateOneD = createAsyncThunk(
+  "drugs/updateOneDrug/:id",
+  async (id, thunkAPI) => {
+    console.log(id);
+    try {
+      return await updateOneDrug(id);
     } catch (error) {
       const message =
         (error.response &&
@@ -45,14 +65,32 @@ const drugsSlice = createSlice({
       .addCase(getD.rejected, (state, action) => {
         state.loading = false;
       })
-      .addCase(getOneD.pending, (state, action) => {
+      .addCase(deleteOneD.pending, (state, action) => {
         state.loading = true;
       })
-      .addCase(getOneD.fulfilled, (state, action) => {
+      .addCase(deleteOneD.fulfilled, (state, action) => {
         state.loading = false;
-        state.drugs = state.drugs.filter((drug) => drug.id === action.payload.id);
+        // state.oneDrug = action.payload;
+        state.drugs = state.drugs.filter((drug) => drug._id === action.payload);
+        console.log(action.payload);
       })
-      .addCase(getOneD.rejected, (state, action) => {
+      .addCase(deleteOneD.rejected, (state, action) => {
+        state.loading = false;
+      })
+      .addCase(updateOneD.pending, (state, action) => {
+        state.loading = true;
+      })
+      .addCase(updateOneD.fulfilled, (state, action) => {
+        state.loading = false;
+        const { TradeName, id } = action.payload;
+
+        const uu = state.drugs.find((drug) => drug._id === id);
+        if (uu) {
+          uu.TradeName = TradeName;
+        }
+        console.log(action.payload);
+      })
+      .addCase(updateOneD.rejected, (state, action) => {
         state.loading = false;
       });
   },

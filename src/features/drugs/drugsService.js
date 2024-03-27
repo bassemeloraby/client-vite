@@ -20,6 +20,7 @@ const getOneDrug = async (id) => {
     const response = await customFetch(`${url}/${id}`);
     return response.data;
   };
+
 const deleteOneDrug = async (id) => {
     // const response = await axios.get(`${API_URL}/${id}`);
     const response = await customFetch.delete(`${url}/${id}`);
@@ -28,11 +29,20 @@ const deleteOneDrug = async (id) => {
     return response.data;
   };
 
+const updateOneDrug = async ({ id, TradeName }) => {
+    const response = await customFetch.patch(`${url}/${id}`,{ TradeName });
+    console.log(id)
+    console.log(TradeName)
+  console.log(response)
+    return response.data;
+  };
+
 
   const drugsService = {
     getDrugs,
     getOneDrug,
-    deleteOneDrug
+    deleteOneDrug,
+    updateOneDrug
   };
   
   export default drugsService;

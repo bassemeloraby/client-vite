@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteOneD, getOneD } from "../features/drugs/oneDrugReducer";
+import { getOneD } from "../features/drugs/oneDrugReducer";
 import { Loading } from "../components";
+import { deleteOneD } from "../features/drugs/drugsReducer";
 
 const SingleDrug = () => {
   const { id } = useParams();
   const { oneDrug, loading } = useSelector((state) => state.oneDrug);
+  // const { drugs } = useSelector((state) => state.drugs);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
