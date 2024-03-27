@@ -11,14 +11,12 @@ const DrugsList = ({ items }) => {
 
   const handelS = (s) => {
     navigate(`/drugs/${s}`);
-    console.log(s)
   };
   const handleIndication = (i) => {
     navigate(`/indication/${i}`);
   };
 
   const handleCard =(id) =>{
-    console.log(id)
     dispatch(getOneD(id));
     navigate(`/singleDrug/${id}`);
   }

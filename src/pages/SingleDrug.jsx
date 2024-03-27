@@ -1,16 +1,21 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getOneD } from "../features/drugs/oneDrugReducer";
+import { deleteOneD, getOneD } from "../features/drugs/oneDrugReducer";
 import { Loading } from "../components";
 
 const SingleDrug = () => {
   const { id } = useParams();
   const { oneDrug, loading } = useSelector((state) => state.oneDrug);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  console.log(id);
-  console.log(oneDrug);
+
+const deleteHandler = (id) => {
+dispatch(deleteOneD(id))
+navigate("/drugs");
+console.log(id)
+}
 
   useEffect(() => {
     dispatch(getOneD(id));
@@ -99,6 +104,18 @@ const SingleDrug = () => {
             }
           </div>
         </section>
+      </div>
+      <div className="options">
+        <button
+          type="button"
+          className="btn btn-danger"
+          onClick={() => deleteHandler(oneDrug[0]._id)}
+        >
+          delete
+        </button>
+        <button type="button" className="btn btn-link">
+          Link
+        </button>
       </div>
     </div>
   );

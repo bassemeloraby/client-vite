@@ -18,6 +18,12 @@ const getDrugs = async () => {
 const getOneDrug = async (id) => {
     // const response = await axios.get(`${API_URL}/${id}`);
     const response = await customFetch(`${url}/${id}`);
+    return response.data;
+  };
+const deleteOneDrug = async (id) => {
+    // const response = await axios.get(`${API_URL}/${id}`);
+    const response = await customFetch.delete(`${url}/${id}`);
+    console.log(id)
   console.log(response)
     return response.data;
   };
@@ -26,6 +32,7 @@ const getOneDrug = async (id) => {
   const drugsService = {
     getDrugs,
     getOneDrug,
+    deleteOneDrug
   };
   
   export default drugsService;
