@@ -11,6 +11,7 @@ import ScientificName from "./ScientificName";
 import SingleDrug from "./SingleDrug";
 import Login from "./Login";
 import AddDrug from "./AddDrug";
+import UpdateDrug from "./UpdateDrug";
 
 export {
   HomeLayout,
@@ -25,5 +26,6 @@ export {
   ScientificName,
   SingleDrug,
   Login,
-  AddDrug
+  AddDrug,
+  UpdateDrug
 };

@@ -16,8 +16,9 @@ import {
   Login,
   ScientificName,
   SingleDrug,
+  UpdateDrug,
 } from "./pages";
-import { ErrorElement } from "./components";
+import { ErrorElement} from "./components";
 
 // actions
 // import { action as addDrugAction } from './pages/AddDrug';
@@ -81,6 +82,12 @@ const router = createBrowserRouter([
       {
         path: "singleDrug/:id",
         element: <SingleDrug />,
+        errorElement: <ErrorElement />,
+        // loader: ScientificNameLoader,
+      },
+      {
+        path: "updateDrug/:id",
+        element: <UpdateDrug />,
         errorElement: <ErrorElement />,
         // loader: ScientificNameLoader,
       },

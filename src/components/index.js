@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import ErrorElement from "./ErrorElement";
 import SubmitBtn from "./SubmitBtn";
 import FormInput from "./FormInput";
+import DrugCard from "./DrugCard";
 
 export {
   Header,
@@ -23,5 +24,6 @@ export {
   Footer,
   ErrorElement,
   SubmitBtn,
-  FormInput
+  FormInput,
+  DrugCard
 };

@@ -20,6 +20,10 @@ const DrugsList = ({ items }) => {
     dispatch(getOneD(id));
     navigate(`/singleDrug/${id}`);
   }
+  const handleEdit =(id) =>{
+    dispatch(getOneD(id));
+    navigate(`/updateDrug/${id}`);
+  }
 
   return (
     <div>
@@ -74,7 +78,15 @@ const DrugsList = ({ items }) => {
             <GoogleLink
               name={drug.TradeName + drug.Strength + drug.StrengthUnit}
             />
+            <span
+            className="me-2 ms-2"
+              style={{ cursor: "pointer", color: "black" }}
+              onClick={() => handleEdit(drug._id)}
+            >
+              Edit
+            </span>{" "}
           </div>
+
         </div>
       )}
     />{" "}
